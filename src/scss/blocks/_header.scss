@@ -1,0 +1,72 @@
+.header {
+	//padding: var(--container-padding);
+	font-family: var(--font-accent);
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	&__end {
+		display: none;
+
+		@include desktop {
+			display: flex;
+			gap: 24px;
+			align-items: center;
+		}
+	}
+
+	&__phone-number {
+		color: var(--text-color);
+	}
+
+	&__phone {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&__ask {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		padding: 16px 24px;
+		//border: 1px solid var(--text-color);
+		border: 2px solid #262626;
+		border-radius: 8px;
+		text-transform: uppercase;
+		color: var(--text-color);
+	}
+
+	&__company-name {
+		font-size: 14px;
+
+		@include desktop {
+			font-size: 20px;
+		}
+	}
+
+	&__start {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	&__logo-img {
+		width: 70px;
+		height: 18px;
+
+		@include desktop {
+			width: 105px;
+			height: 36px;
+		}
+	}
+}
+
+.header__nav {
+	@include tablet {
+		display: none;
+	}
+}
