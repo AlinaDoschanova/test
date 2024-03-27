@@ -69,6 +69,7 @@ gulp.task('fontsStyle', () => {
 	let fontsFile = `${srcFolder}/scss/base/_fontsAutoGen.scss`;
 	// Проверяем существуют ли файлы шрифтов
 	fs.readdir(`${destFolder}/fonts/`, function (err, fontsFiles) {
+		console.log(fontsFiles);
 		if (fontsFiles) {
 			// Проверяем существует ли файл стилей для подключения шрифтов
 
@@ -162,4 +163,4 @@ gulp.task('woff2', () => {
 	);
 });
 
-gulp.task('fontsDev', gulp.series('otfToTtf', 'ttfToWoff', 'fontsStyle', 'woff', 'woff2'));
+gulp.task('fontsDev', gulp.series('otfToTtf', 'ttfToWoff', 'woff', 'woff2', 'fontsStyle'));

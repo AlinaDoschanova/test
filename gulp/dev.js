@@ -131,6 +131,28 @@ gulp.task('images:dev', function () {
 	);
 });
 
+
+gulp.task('svg:dev', function () {
+	return (
+		gulp
+			.src(['!./src/img/**/*', './src/img/svgicons/**/*'])
+			.pipe(changed('./build/img/svgicons/'))
+			.pipe(
+				imagemin([
+					imageminWebp({
+						quality: 85,
+					}),
+				])
+			)
+			.pipe(rename({ extname: '.webp' }))
+			.pipe(gulp.dest('./build/img/svgicons'))
+			.pipe(gulp.src(['!./src/img/**/*', './src/img/svgicons/**/*']))
+			.pipe(changed('./build/img/svgicons'))
+			// .pipe(imagemin({ verbose: true }))
+			.pipe(gulp.dest('./build/img/svgicons'))
+	);
+});
+
 const svgStack = {
 	mode: {
 		stack: {
