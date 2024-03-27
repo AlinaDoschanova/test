@@ -32,6 +32,10 @@
     display: flex;
     gap: 36px;
     overflow: scroll;
+
+    @include desktop {
+      overflow: hidden;
+    }
   }
 
   &__slide {
